@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    /* 1. File Layout (Crucial for organization) */
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    /* 2. Environment Settings (Node.js Standard) */
+    "module": "commonjs",       /* Standard for backend servers to ensure compatibility */
+    "target": "es2020",         /* Good balance of modern features and stability */
+    "lib": ["es2020"],          /* Libraries available to the compiler */
+    
+    /* 3. Module Resolution */
+    "moduleResolution": "node",
+    "esModuleInterop": true,    /* Allows importing CommonJS modules like 'express' easily */
+    "skipLibCheck": true,       /* Speeds up compilation by skipping checks on node_modules */
+
+    /* 4. Strictness (Keep these! Best Practice) */
+    "strict": true,
+    "noUncheckedIndexedAccess": true, /* Prevents 'undefined' errors when accessing arrays */
+    "forceConsistentCasingInFileNames": true,
+
+    /* 5. Clean up (Remove Frontend specific settings) */
+    "sourceMap": true,          /* Helpful for debugging */
+    "declaration": false,       /* Not needed for a backend app (unless building a library) */
+    "removeComments": true      /* Cleans up the output file */
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
