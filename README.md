@@ -77,7 +77,7 @@ src/
 
 1. Clone the repository
 ```bash
-git clone [<repository-url>](https://github.com/dinelkathilina/issue-tracker-be.git)
+git clone https://github.com/dinelkathilina/issue-tracker-be.git
 cd issue-tracker-be
 ```
 
