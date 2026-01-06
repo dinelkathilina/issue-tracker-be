@@ -13,10 +13,9 @@
     "moduleResolution": "node",
     "esModuleInterop": true, /* Allows importing CommonJS modules like 'express' easily */
     "skipLibCheck": true, /* Speeds up compilation by skipping checks on node_modules */
-    "typeRoots": [
-      "./node_modules/@types",
-      "./src/types"
-    ], /* Include custom type declarations */
+    "types": [
+      "node"
+    ], /* Explicitly include Node.js types */
     /* 4. Strictness (Keep these! Best Practice) */
     "strict": true,
     // "noUncheckedIndexedAccess": true, /* Prevents 'undefined' errors when accessing arrays */
