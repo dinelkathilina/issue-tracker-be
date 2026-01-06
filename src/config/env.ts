@@ -8,6 +8,7 @@ interface EnvConfig {
     JWT_SECRET: string;
     JWT_EXPIRES_IN: string;
     NODE_ENV: string;
+    FRONTEND_URL: string;
 }
 
 const getEnvVariable = (key: string, defaultValue?: string): string => {
@@ -24,4 +25,5 @@ export const env: EnvConfig = {
     JWT_SECRET: getEnvVariable('JWT_SECRET'),
     JWT_EXPIRES_IN: getEnvVariable('JWT_EXPIRES_IN', '7d'),
     NODE_ENV: getEnvVariable('NODE_ENV', 'development'),
+    FRONTEND_URL: getEnvVariable('FRONTEND_URL', 'http://localhost:5173'),
 };

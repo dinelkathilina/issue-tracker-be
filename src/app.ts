@@ -13,7 +13,10 @@ const app: Application = express();
 connectDB();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: env.FRONTEND_URL,
+    credentials: true,
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
