@@ -54,6 +54,7 @@ export const getIssues = async (
             status: status as any,
             priority: priority as any,
             severity: severity as any,
+            createdBy: req.user!.id,
             page: page ? parseInt(page as string) : undefined,
             limit: limit ? parseInt(limit as string) : undefined,
             sortBy: sortBy as string,
@@ -199,7 +200,8 @@ export const getStatusCounts = async (
     next: NextFunction
 ): Promise<void> => {
     try {
-        const counts = await issueService.getStatusCounts();
+        const userId = req.user!.id;
+        const counts = await issueService.getStatusCounts(userId);
 
         res.status(200).json({
             success: true,

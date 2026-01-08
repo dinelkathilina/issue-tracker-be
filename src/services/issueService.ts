@@ -38,6 +38,7 @@ export const getIssues = async (
         status,
         priority,
         severity,
+        createdBy,
         page = 1,
         limit = 10,
         sortBy = 'createdAt',
@@ -46,6 +47,10 @@ export const getIssues = async (
 
     // Build filter object
     const filter: any = {};
+
+    if (createdBy) {
+        filter.createdBy = createdBy;
+    }
 
     if (status) {
         filter.status = status;
@@ -160,8 +165,11 @@ export const deleteIssue = async (id: string): Promise<void> => {
     }
 };
 
-export const getStatusCounts = async (): Promise<StatusCounts> => {
+export const getStatusCounts = async (userId: string): Promise<StatusCounts> => {
     const counts = await Issue.aggregate([
+        {
+            $match: { createdBy: userId },
+        },
         {
             $group: {
                 _id: '$status',
