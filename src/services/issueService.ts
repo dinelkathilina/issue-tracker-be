@@ -1,3 +1,4 @@
+import mongoose from 'mongoose';
 import { Issue } from '../models/Issue';
 import {
     IIssue,
@@ -168,7 +169,7 @@ export const deleteIssue = async (id: string): Promise<void> => {
 export const getStatusCounts = async (userId: string): Promise<StatusCounts> => {
     const counts = await Issue.aggregate([
         {
-            $match: { createdBy: userId },
+            $match: { createdBy: new mongoose.Types.ObjectId(userId) },
         },
         {
             $group: {
