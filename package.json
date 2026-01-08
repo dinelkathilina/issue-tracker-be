@@ -1,7 +1,7 @@
 {
   "name": "issue-tracker-be",
   "version": "1.0.0",
-  "description": "",
+  "description": "Comprehensive issue tracking system backend built with Express.js, TypeScript, and MongoDB.",
   "main": "index.js",
   "scripts": {
     "start": "node dist/app.js",
@@ -9,7 +9,7 @@
     "dev": "nodemon src/app.ts"
   },
   "keywords": [],
-  "author": "",
+  "author": "Thilina Dinelka",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {

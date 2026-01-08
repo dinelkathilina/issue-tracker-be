@@ -125,6 +125,8 @@ FRONTEND_URL=http://localhost:5173
 npm run build
 ```
 
+This command installs production and development dependencies, then compiles TypeScript to JavaScript.
+
 5. **Start the development server**
 
 ```bash
@@ -165,6 +167,24 @@ This application can be deployed to various platforms:
 For comprehensive API testing examples and request/response formats, see [`API_TESTING_GUIDE.md`](./API_TESTING_GUIDE.md).
 
 ## 📡 API Endpoints
+
+### Health Check
+
+#### Check Server Status
+
+```http
+GET /health
+```
+
+**Response:**
+
+```json
+{
+  "success": true,
+  "message": "Server is running",
+  "timestamp": "2026-01-08T09:09:31.000Z"
+}
+```
 
 ### Authentication
 
@@ -439,8 +459,6 @@ For detailed API testing instructions with example requests and responses, see:
 ## 🔗 Related Resources
 
 - **Frontend Repository**: [issue-tracker-fe](https://github.com/dinelkathilina/issue-tracker-fe) (React + TypeScript + Hero UI)
-- **Live Backend**: [https://issue-tracker-be.onrender.com](https://issue-tracker-be.onrender.com)
-- **MongoDB Atlas**: [https://www.mongodb.com/cloud/atlas](https://www.mongodb.com/cloud/atlas)
 
 ## 📝 License
 
